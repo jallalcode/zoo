@@ -1,23 +1,35 @@
 package com.ing.zoo;
 
-public class Lion {
-    public String name;
-    public String helloText;
-    public String eatText;
+public class Lion implements MeatEater{
 
-    public Lion()
-    {
+    // Change fields to private
+    private final String name;
+    private String helloText;
+    private String eatText;
+    private String trick;
+
+    public Lion(String name) {
+        this.name = name;
     }
 
+    @Override
     public void sayHello()
     {
         helloText = "roooaoaaaaar";
-        System.out.println(helloText);
+        printText(name, helloText);
     }
 
+    @Override
     public void eatMeat()
     {
         eatText = "nomnomnom thx mate";
-        System.out.println(eatText);
+        printText(name, eatText);
     }
+
+    @Override
+    public void performTrick() {
+        trick = "Long live the king!!";
+        printText(name, trick);
+    }
+
 }

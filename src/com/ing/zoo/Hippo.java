@@ -1,23 +1,21 @@
 package com.ing.zoo;
 
-public class Hippo {
-    public String name;
-    public String helloText;
-    public String eatText;
+public class Hippo implements PlantEater {
+    private String name;
+    private String helloText;
+    private String eatText;
 
-    public Hippo()
-    {
+    public Hippo(String name) {
+        this.name = name;
     }
 
-    public void sayHello()
-    {
+    public void sayHello() {
         helloText = "splash";
-        System.out.println(helloText);
+        printText(name, helloText);
     }
 
-    public void eatLeaves()
-    {
+    public void eatLeaves() {
         eatText = "munch munch lovely";
-        System.out.println(eatText);
+        printText(name, eatText);
     }
 }
