@@ -1,4 +1,4 @@
-package com.ing.zoo;
+package com.ing.zoo.base;
 
 // Abstract class is made so name, hellotext and eattext don't have to be instantiated in every animal class
 public abstract class AbstractAnimal implements Animal {

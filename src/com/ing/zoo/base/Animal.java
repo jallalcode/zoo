@@ -1,4 +1,4 @@
-package com.ing.zoo;
+package com.ing.zoo.base;
 
 // Use interface Animal for methods shared across all animals
 public interface Animal {

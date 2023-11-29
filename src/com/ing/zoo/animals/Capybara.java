@@ -1,4 +1,7 @@
-package com.ing.zoo;
+package com.ing.zoo.animals;
+
+import com.ing.zoo.base.AbstractAnimal;
+import com.ing.zoo.base.PlantEater;
 
 public class Capybara extends AbstractAnimal implements PlantEater {
     private String trick;

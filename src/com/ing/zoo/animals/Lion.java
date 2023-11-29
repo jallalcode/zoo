@@ -1,6 +1,9 @@
-package com.ing.zoo;
+package com.ing.zoo.animals;
 
-public class Lion extends AbstractAnimal implements MeatEater{
+import com.ing.zoo.base.AbstractAnimal;
+import com.ing.zoo.base.MeatEater;
+
+public class Lion extends AbstractAnimal implements MeatEater {
 
 
     private String trick;

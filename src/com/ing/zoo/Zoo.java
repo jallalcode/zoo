@@ -1,6 +1,11 @@
 package com.ing.zoo;
 
 
+import com.ing.zoo.animals.*;
+import com.ing.zoo.base.Animal;
+import com.ing.zoo.base.MeatEater;
+import com.ing.zoo.base.PlantEater;
+
 import java.util.*;
 
 public class Zoo {
@@ -11,6 +16,7 @@ public class Zoo {
         Tiger wally = new Tiger("wally");
         Zebra marty = new Zebra("marty");
         Capybara biggerton = new Capybara("biggerton");
+        Platypus perry = new Platypus("perry");
 
         // Adding all animals to an array, so I can iterate over them for group actions
         ArrayList<Animal> animals = new ArrayList<>();
@@ -20,6 +26,7 @@ public class Zoo {
         animals.add(wally);
         animals.add(marty);
         animals.add(biggerton);
+        animals.add(perry);
 
         // Here I use a Map for scalability and better code structure than a 1000 if else statements
         Map<String, List<Runnable>> commandMap = new HashMap<>();

@@ -1,4 +1,8 @@
-package com.ing.zoo;
+package com.ing.zoo.animals;
+
+import com.ing.zoo.base.AbstractAnimal;
+import com.ing.zoo.base.MeatEater;
+import com.ing.zoo.base.PlantEater;
 
 import java.util.Random;
 

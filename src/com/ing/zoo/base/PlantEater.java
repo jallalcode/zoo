@@ -1,4 +1,4 @@
-package com.ing.zoo;
+package com.ing.zoo.base;
 
 // PlantEater extends Animal interface adding eatLeaves() method to it
 public interface PlantEater extends Animal{
