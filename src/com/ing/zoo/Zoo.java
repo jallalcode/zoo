@@ -10,6 +10,7 @@ public class Zoo {
         Pig dora = new Pig("dora");
         Tiger wally = new Tiger("wally");
         Zebra marty = new Zebra("marty");
+        Capybara biggerton = new Capybara("biggerton");
 
         // Adding all animals to an array, so I can iterate over them for group actions
         ArrayList<Animal> animals = new ArrayList<>();
@@ -18,15 +19,15 @@ public class Zoo {
         animals.add(dora);
         animals.add(wally);
         animals.add(marty);
+        animals.add(biggerton);
 
         // Here I use a Map for scalability and better code structure than a 1000 if else statements
         Map<String, List<Runnable>> commandMap = new HashMap<>();
 
-        commandMap.put("hello henk", new ArrayList<>(Arrays.asList(henk::sayHello)));
-        commandMap.put("hello elsa", new ArrayList<>(Arrays.asList(elsa::sayHello)));
-        commandMap.put("hello dora", new ArrayList<>(Arrays.asList(dora::sayHello)));
-        commandMap.put("hello wally", new ArrayList<>(Arrays.asList(wally::sayHello)));
-        commandMap.put("hello marty", new ArrayList<>(Arrays.asList(marty::sayHello)));
+        for (Animal animal : animals) {
+            String helloCommand = "hello " + animal.getName();
+            commandMap.put(helloCommand, new ArrayList<>(Collections.singletonList(animal::sayHello)));
+        }
 
 
         List<Runnable> collectiveHello = new ArrayList<>();
@@ -61,17 +62,24 @@ public class Zoo {
         commandMap.put("give leaves", plantEatersActions);
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Voer uw command in: ");
 
-        String input = scanner.nextLine();
+        String input;
+        do {
+            System.out.print("Voer uw command in (exit om te stoppen): ");
 
-        List<Runnable> actions = commandMap.get(input);
-        if (actions != null && !actions.isEmpty()) {
-            actions.forEach(Runnable::run);
-        } else {
-            System.out.printf("Unknown command: %s\n", input);
-        }
+            input = scanner.nextLine();
 
-        System.out.println("end");
+            List<Runnable> actions = commandMap.get(input);
+            if (actions != null && !actions.isEmpty()) {
+                actions.forEach(Runnable::run);
+            } else {
+                System.out.printf("Unknown command: %s\n", input);
+            }
+            System.out.println();
+
+
+        } while (!input.equals("exit"));
+
+        System.out.println("Doeidoei");
     }
 }

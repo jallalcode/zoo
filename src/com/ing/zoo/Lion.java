@@ -1,22 +1,13 @@
 package com.ing.zoo;
 
-public class Lion implements MeatEater{
+public class Lion extends AbstractAnimal implements MeatEater{
 
-    // Change fields to private
-    private final String name;
-    private String helloText;
-    private String eatText;
+
     private String trick;
 
     public Lion(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public void sayHello()
-    {
-        helloText = "roooaoaaaaar";
-        printText(name, helloText);
+        super(name);
+        this.helloText = "roooaoaaaaar";
     }
 
     @Override

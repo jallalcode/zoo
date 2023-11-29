@@ -2,19 +2,13 @@ package com.ing.zoo;
 
 import java.util.Random;
 
-public class Pig implements MeatEater, PlantEater {
-    private String name;
-    private String helloText;
-    private String eatText;
+public class Pig extends AbstractAnimal implements MeatEater, PlantEater {
+
     private String trick;
 
     public Pig(String name) {
-        this.name = name;
-    }
-
-    public void sayHello() {
-        helloText = "splash";
-        printText(name, helloText);
+        super(name);
+        this.helloText = "splash";
     }
 
     public void eatLeaves() {

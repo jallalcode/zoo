@@ -6,6 +6,8 @@ public interface Animal {
 
      default void performTrick()  {}
 
+    String getName();
+
     /**
      * provides name and type of animal to each action
      * @param name

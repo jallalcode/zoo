@@ -1,26 +1,23 @@
 package com.ing.zoo;
 
-public class Zebra extends AbstractAnimal implements PlantEater {
-
-
+public class Capybara extends AbstractAnimal implements PlantEater {
     private String trick;
 
-    public Zebra(String name) {
+    public Capybara (String name) {
         super(name);
-        this.helloText = "zebra zebra";
+        this.helloText = "boink";
     }
 
     @Override
     public void eatLeaves() {
-        eatText = "munch munch zank yee bra";
+        eatText = "hmm nomnomnom";
         printText(name, eatText);
     }
 
     @Override
     public void performTrick() {
-        trick = "Does a backflip";
+        trick = "Casually riding an alligator";
         printText(name, trick);
     }
-
 
 }

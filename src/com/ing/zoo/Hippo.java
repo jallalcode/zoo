@@ -1,17 +1,11 @@
 package com.ing.zoo;
 
-public class Hippo implements PlantEater {
-    private String name;
-    private String helloText;
-    private String eatText;
+public class Hippo extends AbstractAnimal implements PlantEater {
+
 
     public Hippo(String name) {
-        this.name = name;
-    }
-
-    public void sayHello() {
-        helloText = "splash";
-        printText(name, helloText);
+        super(name);
+        this.helloText = "splash";
     }
 
     public void eatLeaves() {
